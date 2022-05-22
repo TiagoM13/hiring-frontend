@@ -16,4 +16,8 @@ export const GlobalStyles = createGlobalStyle`
       font-size: 83.5%;
     }
   }
+
+  button {
+    cursor: pointer;
+  }
 `;

@@ -6,9 +6,9 @@ export function Header() {
   return (
     <Container>
       <h1>Project Finance</h1>
-      <div>
+      <button>
         <img src={userImg} alt="Project Finance" />
-      </div>
+      </button>
     </Container>
   )
 }

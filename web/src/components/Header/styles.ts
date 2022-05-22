@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const Container = styled.header`
   background: #435;
   font-family: Arial, Helvetica, sans-serif;
-  padding: 1rem;
+  padding: 1rem 2rem;
 
   display: flex;
   flex-direction: row;
@@ -15,18 +15,18 @@ export const Container = styled.header`
     font-size: 1.5rem;
   }
 
-  div {
+  button {
     background: #fff;
-    width: 50px;
-    height: 50px;
+    padding: 0.25rem;
+    border: none;
     border-radius: 50%;
 
     display: flex;
     justify-content: center;
 
     img {
-      width: 45px;
-      height: 45px;
+      width: 40px;
+      height: 40px;
     }
   }
 `;
