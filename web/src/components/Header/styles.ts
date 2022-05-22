@@ -2,12 +2,12 @@ import styled from "styled-components"
 
 export const Container = styled.header`
   background: var(--background-1);
-  font-family: Arial, Helvetica, sans-serif;
+  max-width: 100%;
+  height: 150px;
   padding: 1rem 2rem;
 
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: space-between;
 
   h1 {
@@ -22,9 +22,8 @@ export const Container = styled.header`
     padding: 0.25rem;
     border: 0.15rem solid var(--background-2);
     border-radius: 50%;
-
-    display: flex;
-    justify-content: center;
+    width: 55px;
+    height: 55px;
 
     transition: filter 0.7s ease-in;
 
@@ -35,6 +34,7 @@ export const Container = styled.header`
     img {
       width: 40px;
       height: 40px;
+      padding: 0.15rem;
     }
   }
 `;

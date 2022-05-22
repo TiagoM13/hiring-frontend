@@ -5,11 +5,11 @@ export const Container = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 2;
   padding: 1rem;
+  margin-top: -4rem;
 
   div {
     background: var(--background-4);
     color: var(--text-grey);
-    font-family: Arial, Helvetica, sans-serif;
     margin: 0 0.5rem;
     border-radius: 0.5rem;
 
@@ -24,12 +24,13 @@ export const Container = styled.div`
 
     h3 {
       font-size: 1.5rem;
-      font-weight: 600;
+      font-weight: 500;
       margin-bottom: 1.5rem;
     }
 
     p {
       font-size: 1.5rem;
+      font-weight: 400;
       color: var(--text-green);
     }
     }
