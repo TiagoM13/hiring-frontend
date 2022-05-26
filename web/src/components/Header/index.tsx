@@ -1,25 +1,33 @@
-import { ButtonDropdown, Container } from "./styles";
+import { useState } from "react";
+import { DropdownContent, Container } from "./styles";
 
 import userImg from "../../assets/user.png"
-import { useState } from "react";
+import filterImg from "../../assets/filter.png"
+
 
 export function Header() {
   const [active, setActive] = useState(true)
 
   return (
     <Container>
-      <h1>Projeto Finanças</h1>
+      <div>
+        <h1>Projeto Finanças</h1>
+        <button className="button-filter">
+          <img src={filterImg} alt="Filtro" />
+          filtrar
+        </button>
+      </div>
       <div>
         <button onClick={() => setActive(!active)}>
           <img src={userImg} alt="Project Finance" />
         </button>
         <div className={active ? "active" : ""}>
-          <ButtonDropdown>
+          <DropdownContent>
             <ul>
               <a href="#"><li>Perfil</li></a>
               <a href="#"><li>Sair</li></a>
             </ul>
-          </ButtonDropdown>
+          </DropdownContent>
         </div>
       </div>
     </Container>

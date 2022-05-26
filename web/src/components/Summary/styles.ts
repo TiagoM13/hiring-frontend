@@ -8,7 +8,7 @@ export const Container = styled.div`
   margin-top: -4rem;
 
   div {
-    background: var(--background-4);
+    background: var(--background-2);
     color: var(--text-grey);
     margin: 0 0.5rem;
     border-radius: 0.5rem;
@@ -22,16 +22,28 @@ export const Container = styled.div`
       margin: 1rem;
       padding: 0.5rem;
 
-    h3 {
+    h2 {
       font-size: 1.5rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 1.2rem;
       font-weight: 500;
-      margin-bottom: 1.5rem;
     }
 
     p {
       font-size: 1.5rem;
       font-weight: 400;
       color: var(--text-green);
+      margin-top: 0.5rem;
+    }
+
+    strong {
+      font-size: 0.8rem;
+      color: var(--text-grey);
+      text-align: right;
     }
     }
   }

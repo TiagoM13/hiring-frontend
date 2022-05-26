@@ -42,9 +42,30 @@ export const Container = styled.header`
   .active {
     display: none;
   }
+
+  .button-filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-3);
+    width: 80px;
+    height: 30px;
+    color: var(--text-black);
+    margin-top: 1.5rem;;
+    margin-left: 1rem;;
+
+    border: none;
+    border-radius: 0.25rem;
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin-right: 0.5rem;
+    }
+  }
 `;
 
-export const ButtonDropdown = styled.div`
+export const DropdownContent = styled.div`
   position: absolute;
   background: var(--background-2);
   min-width: 90px;
