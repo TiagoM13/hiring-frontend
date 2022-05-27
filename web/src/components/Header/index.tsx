@@ -4,15 +4,18 @@ import { DropdownContent, Container } from "./styles";
 import userImg from "../../assets/user.png"
 import filterImg from "../../assets/filter.png"
 
+interface HeaderProps {
+  onOpenModalFilter: () => void;
+}
 
-export function Header() {
+export function Header({onOpenModalFilter}: HeaderProps) {
   const [active, setActive] = useState(true)
 
   return (
     <Container>
       <div>
         <h1>Projeto Finanças</h1>
-        <button className="button-filter">
+        <button className="button-filter" onClick={onOpenModalFilter}>
           <img src={filterImg} alt="Filtro" />
           filtrar
         </button>
