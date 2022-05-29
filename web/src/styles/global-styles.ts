@@ -7,7 +7,7 @@ export const GlobalStyles = createGlobalStyle`
     --background-3: #E5E8E8;
     --background-button: #28B463;
     --text-light: #F8F9F9;
-    --text-black: #17202A;
+    --text-black: #2C3E50;
     --text-grey: #566573;
     --text-green: #58D68D;
   }
@@ -52,7 +52,8 @@ export const GlobalStyles = createGlobalStyle`
 
   .react-modal-filter {
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
+    height: 550px;
     background-color: var(--background-2);
     padding: 3rem;
     position: relative;
@@ -78,16 +79,17 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .button-submit {
-    width: 100%;
-    padding: 0 1.5rem;
-    height: 4rem;
+    display: block;
+    width: 50%;
+    height: 3rem;
     background: var(--background-button);
     color: #FFF;
     border-radius: 0.25rem;
     border: 0;
     font-size: 1rem;
-    margin-top: 1.5rem;
     font-weight: 600;
+    margin: 1rem auto;
+    padding: 0 1.5rem;
 
     transition: filter 0.2s;
 

@@ -1,10 +1,29 @@
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
+
+interface SumarProps {
+  compare: {
+    lastPrices: [
+      {
+        name: string;
+        lastPrice: number;
+        pricedAt: string;
+      }]
+  }
+}
 
 export function Summary() {
+  const lastPrices =
+  {
+    name: "ITUB4",
+    lastPrice: 0.3826,
+    pricedAt: "2020-05-18"
+
+  }
+
   const data = {
     name: "AMZN",
-    lastPrice: 2135.5,
-    pricedAt: "2022-05-25"
+    lastPrice: 2221.55,
+    pricedAt: "2022-05-26"
   }
 
   return (
@@ -13,23 +32,87 @@ export function Summary() {
         <div>
           <header>
             <h2>{data.name}</h2>
-            <h3>Preço</h3>
-            <p>$ {data.lastPrice}</p>
-            <strong>{data.pricedAt}</strong>
+            <h3>Preço: <strong>$ {data.lastPrice}</strong></h3>
+            <p>{data.pricedAt}</p>
           </header>
         </div>
+
         <div>
+          <h2>Comparação de Ações</h2>
+          <Content>
+
+            <div>
+              <ul>
+                <li>Name:</li>
+                <li>Preço:</li>
+                <li>Data:</li>
+              </ul>
+              <ul>
+                <li>{lastPrices.name}</li>
+                <li className="prices">$ {lastPrices.lastPrice}</li>
+                <li>{lastPrices.pricedAt}</li>
+              </ul>
+            </div>
+
+            <div>
+              <ul>
+                <li>Name:</li>
+                <li>Preço:</li>
+                <li>Data:</li>
+              </ul>
+              <ul>
+                <li>{lastPrices.name}</li>
+                <li className="prices">$ {lastPrices.lastPrice}</li>
+                <li>{lastPrices.pricedAt}</li>
+              </ul>
+            </div>
+
+            <div>
+              <ul>
+                <li>Name:</li>
+                <li>Preço:</li>
+                <li>Data:</li>
+              </ul>
+              <ul>
+                <li>{lastPrices.name}</li>
+                <li className="prices">$ {lastPrices.lastPrice}</li>
+                <li>{lastPrices.pricedAt}</li>
+              </ul>
+            </div>
+
+            <div>
+              <ul>
+                <li>Name:</li>
+                <li>Preço:</li>
+                <li>Data:</li>
+              </ul>
+              <ul>
+                <li>{lastPrices.name}</li>
+                <li className="prices">$ {lastPrices.lastPrice}</li>
+                <li>{lastPrices.pricedAt}</li>
+              </ul>
+            </div>
+
+            <div>
+              <ul>
+                <li>Name:</li>
+                <li>Preço:</li>
+                <li>Data:</li>
+              </ul>
+              <ul>
+                <li>{lastPrices.name}</li>
+                <li className="prices">$ {lastPrices.lastPrice}</li>
+                <li>{lastPrices.pricedAt}</li>
+              </ul>
+            </div>
+          </Content>
+        </div>
+        {/* <div>
           <header>
             <h3>Preço Histórico</h3>
             <p>$ 1700,00</p>
           </header>
-        </div>
-        <div>
-          <header>
-            <h3>Comparação de Ações</h3>
-            <p>$ 270,00</p>
-          </header>
-        </div>
+        </div> */}
       </Container>
     </div>
   )

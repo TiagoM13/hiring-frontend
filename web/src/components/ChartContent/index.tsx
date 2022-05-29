@@ -4,34 +4,47 @@ import { Container } from "./styles";
 export function ChartContent() {
   const data = [
     [
-      "Month",
-      "Facebook",
-      "Twitter",
-      "Instagram",
+      { type: "date", label: "Month" },
+      "AMZN",
     ],
 
-    ["2020/09", 157000, 180700, 780000],
-    ["2021/08", 135000, 112000, 500000],
-    ["2022/01", 165000, 100000, 500000],
+    [new Date(2021, 0), 7000],
+    [new Date(2021, 1), 5900],
+    [new Date(2021, 2), 9000],
+    [new Date(2021, 3), 14000],
+    [new Date(2021, 4), 11000],
+    [new Date(2021, 5), 16000],
   ];
 
   const options = {
-    title: "Projeção de seguidores nas redes Sociais",
-    vAxis: { title: "Seguidores" },
-    hAxis: { title: "Mês" },
-    seriesType: "bars",
-    series: { 4: { type: "line" } },
-  };
+    chart: {
+      title: "Projeção de ganhos e perdas"
+    },
+    series: {
+      0: { axis: "Value" },
+    },
+    axes: {
+      y: {
+        Value: { label: "Quantidade" },
+      },
+    }
+  }
 
   return (
     <Container>
-      <h3>Conteúdo Gráfico</h3>
       <Chart
-        chartType="ComboChart"
+        className="chart"
+        chartType="Line"
         data={data}
         options={options}
-        width="1170px"
+        width="900px"
         height="400px"
+        style={
+          {
+            fontSize: "14px",
+            backgroundPosition: "3rem"
+          }
+        }
       />
     </Container>
   )

@@ -1,5 +1,6 @@
 import { ChartContent } from "../ChartContent";
 import { Summary } from "../Summary";
+import { TableHistory } from "../TableHistory";
 import { Container } from "./styles";
 
 export function Dashboard() {
@@ -7,6 +8,7 @@ export function Dashboard() {
     <Container>
       <Summary />
       <ChartContent />
+      <TableHistory />
     </Container>
   )
 }

@@ -20,10 +20,11 @@ export function ModalFilter({ isOpen, onCloseModalFilter }: ButtonFilterProps) {
 
   function getData() {
     let api: Api = new Api();
-    console.log(api.getStockCurrentPrice(name))    
-    console.log(api.getStockHistory(name, from, to)) 
-    console.log(api.getStockGains(name, purchasedAt, purchasedAmount))   
-    console.log(api.getCompareStocks(name, compare)) 
+    console.log(api)
+    console.log(api.getStockCurrentPrice(name))
+    console.log(api.getStockHistory(name, from, to))
+    console.log(api.getStockGains(name, purchasedAt, purchasedAmount))
+    console.log(api.getCompareStocks(name, compare))
   }
 
   return (
@@ -37,37 +38,55 @@ export function ModalFilter({ isOpen, onCloseModalFilter }: ButtonFilterProps) {
           <img src={imgClose} alt="" />
         </button>
         <Container>
-          <input 
-            value={name}
-            type="text" 
-            placeholder="Nome da Empresa"
-            onChange={event => setName(event.target.value)}
-          />
-          <input 
-            type="date" 
-            value={from}
-            onChange={event => setFrom(event.target.value)}
-          />
-          <input 
-            type="date" 
-            value={to}
-            onChange={event => setTo(event.target.value)}
-          />
-          <input 
-            type="date" 
-            value={purchasedAt}
-            onChange={event => setPurchasedAt(event.target.value)}
-          />
-          <input 
-            type="number"
-            value={purchasedAmount}
-            onChange={event => setPurchasedAmount(Number(event.target.value))} 
-          />
-          <input 
-            type="text" 
-            value={compare}
-            onChange={event => setCompare(event.target.value)}
-          />
+          <div>
+            <h3>Ver dados da Empresa</h3>
+            <label>Empresa:</label>
+            <input
+              type="text"
+              placeholder="Código da Empresa"
+              value={name}
+              onChange={event => setName(event.target.value)}
+            />
+            <label htmlFor="">Data inicial:</label>
+            <input
+              id='formDate'
+              type="date"
+              value={from}
+              onChange={event => setFrom(event.target.value)}
+            />
+            <label htmlFor="">Data final:</label>
+            <input
+              type="date"
+              value={to}
+              onChange={event => setTo(event.target.value)}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="">Data da compra da ação:</label>
+            <input
+              type="date"
+              value={purchasedAt}
+              onChange={event => setPurchasedAt(event.target.value)}
+            />
+            <label htmlFor="">Valor da ação:</label>
+            <input
+              type="number"
+              value={purchasedAmount}
+              onChange={event => setPurchasedAmount(Number(event.target.value))}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="">Código da empresa a comparar:</label>
+            <input
+              type="text"
+              placeholder="Código da Empresa"
+              value={compare}
+              onChange={event => setCompare(event.target.value)}
+            />
+          </div>
+
           <button type="button" className="button-submit" onClick={getData}>
             Filtrar
           </button>
