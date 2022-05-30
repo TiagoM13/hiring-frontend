@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Modal from 'react-modal'
 
 import imgClose from "../../assets/close.svg"
-import { Api } from '../service/api';
+import { Api} from '../service/api';
 import { Container } from './styles';
 
 interface ButtonFilterProps {
@@ -18,13 +18,21 @@ export function ModalFilter({ isOpen, onCloseModalFilter }: ButtonFilterProps) {
   const [purchasedAmount, setPurchasedAmount] = useState(0)
   const [compare, setCompare] = useState('')
 
-  function getData() {
-    let api: Api = new Api();
-    console.log(api)
-    console.log(api.getStockCurrentPrice(name))
-    console.log(api.getStockHistory(name, from, to))
-    console.log(api.getStockGains(name, purchasedAt, purchasedAmount))
-    console.log(api.getCompareStocks(name, compare))
+  async function getData() {    
+    const api: Api = new Api();
+    const resultStockCurrentPriceRoute = await  api.getStockCurrentPrice(name);
+    const resultStockHistoryRoute = await api.getStockHistory(name, from, to);
+    const resultStockGainsRoute = await api.getStockGains(name, purchasedAt, purchasedAmount);
+    const resultCompareStocksRoute = await api.getCompareStocks(name, compare);
+
+    const result = {
+      price: resultStockCurrentPriceRoute,
+      history: resultStockHistoryRoute,
+      gains: resultStockGainsRoute,
+      compare: resultCompareStocksRoute,
+    }
+
+    console.log(result);
   }
 
   return (
@@ -40,7 +48,8 @@ export function ModalFilter({ isOpen, onCloseModalFilter }: ButtonFilterProps) {
         <Container>
           <div>
             <h3>Ver dados da Empresa</h3>
-            <label>Empresa:</label>
+            { }
+            <label>Empresa: { }</label>
             <input
               type="text"
               placeholder="Código da Empresa"

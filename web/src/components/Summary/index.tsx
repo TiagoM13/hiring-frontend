@@ -1,16 +1,5 @@
 import { Container, Content } from "./styles";
 
-interface SumarProps {
-  compare: {
-    lastPrices: [
-      {
-        name: string;
-        lastPrice: number;
-        pricedAt: string;
-      }]
-  }
-}
-
 export function Summary() {
   const lastPrices =
   {
