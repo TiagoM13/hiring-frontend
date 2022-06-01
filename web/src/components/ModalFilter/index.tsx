@@ -35,8 +35,6 @@ export function ModalFilter({ isOpen, onCloseModalFilter, resultFilter }: Button
 
   }
 
-  console.log(from);
-  
   return (
     <div>
       <Modal

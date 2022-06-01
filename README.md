@@ -1,29 +1,79 @@
-# Descrição
+# :rocket: Projeto Dashboard de Ações Financeiras
 
-Uma corretora de ações está desenvolvendo um sistema para permitir que pequenos investidores possam tomar decisões melhores sobre seu portfólio. Uma das funcionalidades importantes é a de verificar o desempenho de uma ação nos seguintes cenários:
+## :book: Descrição do Projeto
 
-   - Preço atual;
-   - Preço histórico;
-   - Preço atual em comparação a outras ações;
-   - Projeção de ganhos com compra em data específica.
+Neste projeto para uma vaga na Alive App Brasil, tive o dever de construir um Dashboard para obter dados de ações financeiras de diversas empresas. è um Dashboard simples, com algumas informações, contendo um botão que possibilita filtrar os dados das empresas, como qual empresa você deseja saber sobre as açõe, uma data especifica de uma certa quantidade de ação, ou simplesmente ver um histórico de ações dessa determinada empresa, também comparar as ações de uma empresa com uma outra empresa qualquer.
 
-Para isso, a equipe de software da empresa optou por desenvolver duas aplicações: um serviço de backend especializado nesses requisitos (que permitirá que essas funcionalidades sejam reutilizadas em outros produtos da empresa) e um dashboard configurável que dará visibilidade aos dados. Sua missão para este teste é implementar o frontend dessas partes.
+O layout da aplicação é bem simples, contendo algumas seções com informações, gráfico com uma projeção de ganhos e uma lista contendo um histórico de ações. No canto superior esquerdo á um botão para filtrar as informações, no canto superior direito um botão de acesso a infomações do usuário (infelizmente essa função ainda não está disponível no momento).
 
-A ideia é implementar algo simples, sem preocupações com dividendos, taxas administrativas ou outras incumbências que afetariam o montante total. Sendo assim, pressuponha que a compradora deseja saber o quanto teria ganhado ou perdido se tivesse investido seu dinheiro numa determinada quantidade de ações de uma empresa em alguma data no passado.
+Além da aplicação Frontend, o Backend já desenvolvido, este que será usado para obtenção dos dados, fazendo uma requisição na API, utilizando a <a style="text-decoration: none" href="(https://www.alphavantage.co">Alpha Vantage</a> para busca de dados.
 
-# Requisitos técnicos da solução
+### :point_right: Este respositório contém 
 
-- O serviço deverá ser implementado via HTTP, e o formato de serialização das requisições e respostas será JSON.
-- O frontend deverá ser um SPA(Single-Page Application) com o framework de sua escolha(React, Vue, Angular).
-- O backend já está desenvolvido, você precisará apenas criar o frontend e fazer a conexão entre as duas plataformas. Mas caso queira criar um backend também, fique à vontade.
-- Sua solução deverá ter testes automatizados.
-- Para obter dados de ações no backend, você poderá adquirir uma API_KEY gratuita no Alpha Vantage (https://www.alphavantage.co).
-- Ao final do desafio você deve enviar prints das telas funcionando.
-- O tratamento de erros não será explicitado nos endpoints. O candidato ou candidata poderá inferir casos que poderão gerar erros ou duplicidades nos dados, e tratá-los de acordo. A ausência de tratamento não desqualifica a proposta; a presença, no entanto, contará pontos a favor.
+   - uma pasta <strong>server</strong> (Back-End da Aplicação)
+   - uma pasta <strong>web</strong> (Front-End da Aplicação)
 
-# Como enviar sua proposta
+### :dart: Layout da Aplicação
 
-- Clone esse repositório (Você pode utilizar o backend que ja está desenvolvido);
-- Implemente sua solução, fazendo commits da maneira que faria em um projeto profissional;
-- Substitua este README com um específico para sua aplicação, indicando como rodá-la, e como executar os testes (fique à vontade para inserir mais detalhes técnicos, caso deseje, isso conta pontos à favor);
-- Nos envie o link do seu desafio finalizado, juntamente com os prints de tela.
+Imagens do Layout da Aplicação:
+
+<img title="Sumário de dados" src="./web/src/assets/sumario.png"/>
+<img title="Gráfico de ganhos" src="./web/src/assets/grafico.png"/>
+<img title="Tábela de ações" src="./web/src/assets/tabela.png"/>
+<img title="Filtro de busca" src="./web/src/assets/modal.png"/>
+
+### :gear: Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as sequintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/).
+
+### :label: Rodando o Back End (servidor)
+
+```bash 
+   # clone este respositório
+   $ git clone <https://github.com/TiagoM13/hiring-frontend.git>
+
+   # Acesse a pasta do projeto no terminal
+   $ cd hiring-frontend
+
+   # Vá para a pasta Server
+   $ cd server
+
+   # Instale as dependências
+   $ npm install
+
+   # Execute a aplicação em modo de desenvolvimento
+   $ npm run dev
+
+   # O servidor inciará na porta:3001
+```
+
+### :label: Rodando o Front End (servidor)
+
+```bash 
+   # Acesse a pasta do projeto no terminal
+   $ cd hiring-frontend
+
+   # Vá para a pasta Server
+   $ cd web
+
+   # Instale as dependências
+   $ npm install
+
+   # Execute a aplicação em modo de desenvolvimento
+   $ npm run dev
+
+   # O servidor inciará na porta:300o - acesse <http://localhost:300>
+```
+
+### :hammer_and_wrench: Tecnologias 
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- React
+- Typescript
+- Fetch
+- React Google Charts
+- React Modal
+- Styled Components
+- Vscode

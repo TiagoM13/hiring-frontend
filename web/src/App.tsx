@@ -6,7 +6,6 @@ import { Header } from "./components/Header";
 
 import { GlobalStyles } from "./styles/global-styles";
 import { Api } from "./components/service/api";
-import axios from "axios";
 
 Modal.setAppElement("#root");
 

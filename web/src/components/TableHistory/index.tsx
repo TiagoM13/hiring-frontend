@@ -6,15 +6,6 @@ interface TableHistoryProps {
 }
 
 export function TableHistory({ history }: TableHistoryProps) {
-  // const history = {
-  //   name: "AMZN",
-  //   opening: 3282.99,
-  //   low: 3246.39,
-  //   high: 3316.54,
-  //   closing: 3271.2,
-  //   pricedAt: "2022-04-01",
-  //   volume: 2854475
-  // }
 
   return (
     <div>
@@ -46,7 +37,6 @@ export function TableHistory({ history }: TableHistoryProps) {
                 )
               })
             }
-            
           </tbody>
         </table>
       </Container>

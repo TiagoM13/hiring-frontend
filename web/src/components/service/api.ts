@@ -1,6 +1,6 @@
 export class Api {
   baseURL: string = "http://localhost:3001"
-  
+
   async getStockCurrentPrice(stockName: string = 'AMZN') {
     return await fetch(`${this.baseURL}/stock/${stockName}/quote`)
       .then(response => (response.json()))
