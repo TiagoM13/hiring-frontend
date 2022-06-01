@@ -2,15 +2,16 @@ import { useState } from 'react';
 import Modal from 'react-modal'
 
 import imgClose from "../../assets/close.svg"
-import { Api} from '../service/api';
+import { Api } from '../service/api';
 import { Container } from './styles';
 
 interface ButtonFilterProps {
   onCloseModalFilter: () => void;
   isOpen: boolean;
+  resultFilter: any;
 }
 
-export function ModalFilter({ isOpen, onCloseModalFilter }: ButtonFilterProps) {
+export function ModalFilter({ isOpen, onCloseModalFilter, resultFilter }: ButtonFilterProps) {
   const [name, setName] = useState('')
   const [from, setFrom] = useState('')
   const [to, setTo] = useState('')
@@ -18,23 +19,24 @@ export function ModalFilter({ isOpen, onCloseModalFilter }: ButtonFilterProps) {
   const [purchasedAmount, setPurchasedAmount] = useState(0)
   const [compare, setCompare] = useState('')
 
-  async function getData() {    
+  async function getData() {
     const api: Api = new Api();
-    const resultStockCurrentPriceRoute = await  api.getStockCurrentPrice(name);
+    const resultStockCurrentPriceRoute = await api.getStockCurrentPrice(name);
     const resultStockHistoryRoute = await api.getStockHistory(name, from, to);
     const resultStockGainsRoute = await api.getStockGains(name, purchasedAt, purchasedAmount);
     const resultCompareStocksRoute = await api.getCompareStocks(name, compare);
 
-    const result = {
+    resultFilter({
       price: resultStockCurrentPriceRoute,
       history: resultStockHistoryRoute,
       gains: resultStockGainsRoute,
       compare: resultCompareStocksRoute,
-    }
+    }) 
 
-    console.log(result);
   }
 
+  console.log(from);
+  
   return (
     <div>
       <Modal
@@ -48,8 +50,7 @@ export function ModalFilter({ isOpen, onCloseModalFilter }: ButtonFilterProps) {
         <Container>
           <div>
             <h3>Ver dados da Empresa</h3>
-            { }
-            <label>Empresa: { }</label>
+            <label>Empresa:</label>
             <input
               type="text"
               placeholder="Código da Empresa"
@@ -58,7 +59,6 @@ export function ModalFilter({ isOpen, onCloseModalFilter }: ButtonFilterProps) {
             />
             <label htmlFor="">Data inicial:</label>
             <input
-              id='formDate'
               type="date"
               value={from}
               onChange={event => setFrom(event.target.value)}
@@ -81,7 +81,7 @@ export function ModalFilter({ isOpen, onCloseModalFilter }: ButtonFilterProps) {
             <label htmlFor="">Valor da ação:</label>
             <input
               type="number"
-              value={purchasedAmount}
+              defaultValue={purchasedAmount}
               onChange={event => setPurchasedAmount(Number(event.target.value))}
             />
           </div>

@@ -1,44 +1,28 @@
 import { Chart } from "react-google-charts"
+import { IGainsProps } from "../../App";
 import { Container } from "./styles";
 
-export function ChartContent() {
+interface ChartContentProps {
+  gains: IGainsProps
+}
+
+export function ChartContent({ gains }: ChartContentProps) {
   const data = [
-    [
-      { type: "date", label: "Month" },
-      "AMZN",
-    ],
-
-    [new Date(2021, 0), 7000],
-    [new Date(2021, 1), 5900],
-    [new Date(2021, 2), 9000],
-    [new Date(2021, 3), 14000],
-    [new Date(2021, 4), 11000],
-    [new Date(2021, 5), 16000],
+    ["Gains", gains?.name],
+    ["Último preço", gains?.lastPrice, ],
+    ["Capitais ganhos", gains?.capitalGains],
+    ["Preço da data", gains?.priceAtDate],
+    ["Quantia comprada", gains?.purchasedAmount],
   ];
-
-  const options = {
-    chart: {
-      title: "Projeção de ganhos e perdas"
-    },
-    series: {
-      0: { axis: "Value" },
-    },
-    axes: {
-      y: {
-        Value: { label: "Quantidade" },
-      },
-    }
-  }
 
   return (
     <Container>
       <Chart
         className="chart"
-        chartType="Line"
+        chartType="ColumnChart"
         data={data}
-        options={options}
         width="900px"
-        height="400px"
+        height="1000px"
         style={
           {
             fontSize: "14px",

@@ -17,11 +17,11 @@ export const Container = styled.div`
     box-shadow: 1px 1px 10px 0.5px rgba(0,0,0,0.3);
 
     & + div {
-      width: 800px;
+      /* width: 750px; */
 
       h2 {
         text-align: center;
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-weight: 500;
         margin: 0.5rem 0;
       }
@@ -71,8 +71,7 @@ export const Content = styled.section`
   div {
     background-color: var(--background-3);
     border-radius: 0.25rem;
-    margin: 0 0.2rem;
-    text-align: justify;
+    margin: 16px 5px;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -84,11 +83,11 @@ export const Content = styled.section`
     padding: 0.2rem;
     font-size: 0.7rem;
     font-weight: 600;
-
+    
     li {
-      color: rgba(0, 0, 0, 0.4);
+      color: rgba(0, 0, 0, 0.5);
       list-style: none;
-      margin: 1rem 0;
+      margin: 1rem 1.5rem;
     }
 
     & .prices {
