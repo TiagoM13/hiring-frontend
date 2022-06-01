@@ -6,7 +6,7 @@ Neste projeto para uma vaga na Alive App Brasil, tive o dever de construir um Da
 
 O layout da aplicação é bem simples, contendo algumas seções com informações, gráfico com uma projeção de ganhos e uma lista contendo um histórico de ações. No canto superior esquerdo á um botão para filtrar as informações, no canto superior direito um botão de acesso a infomações do usuário (infelizmente essa função ainda não está disponível no momento).
 
-Além da aplicação Frontend, o Backend já desenvolvido, este que será usado para obtenção dos dados, fazendo uma requisição na API, utilizando a <a style="text-decoration: none" href="(https://www.alphavantage.co">Alpha Vantage</a> para busca de dados.
+Além da aplicação Frontend, o Backend já desenvolvido, este que será usado para obtenção dos dados, fazendo uma requisição na API, utilizando a [Alpha Vantage](https://www.alphavantage.co) para busca de dados.
 
 ### :point_right: Este respositório contém 
 
@@ -48,7 +48,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as sequintes
    # O servidor inciará na porta:3001
 ```
 
-### :label: Rodando o Front End (servidor)
+### :label: Rodando o Front End (projeto web)
 
 ```bash 
    # Acesse a pasta do projeto no terminal
@@ -77,3 +77,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - React Modal
 - Styled Components
 - Vscode
+
+### :boy: Autor 
+
+Tiago Mota
+
+[LinkedIn](https://www.linkedin.com/in/tiago-mota-4690591a8/)
+[Gmail](thyagomotha2000@gmail.com)
